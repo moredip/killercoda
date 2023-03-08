@@ -3,6 +3,11 @@ import Router from 'express-promise-router'
 import cowsay from 'cowsay'
 
 const app = express()
+app.use(function (req, res, next) {
+  res.setHeader('content-type', 'text/plain')
+  next()
+});
+
 const routes = Router()
 app.use(routes);
 
@@ -16,11 +21,6 @@ routes.get('/', async (req, res) => {
     res.send("Hello, world!")
   }
 })
-
-app.use(function (req, res, next) {
-  res.setHeader('content-type', 'text/plain')
-  next()
-});
 
 app.listen(3333, () => {
   console.log("Server running on port 3333")

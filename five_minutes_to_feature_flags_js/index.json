@@ -16,7 +16,7 @@
           "text": "cowsay.md"
         }, {
           "title": "Introducing OpenFeature",
-          "text": "step2.md"
+          "text": "intro-of.md"
         }, {
           "title": "Moving to a Full Feature Flagging System",
           "text": "step3.md"
@@ -40,9 +40,6 @@
     },
     "backend": {
       "imageid": "ubuntu"
-    },
-    "interface": {
-      "layout": "ide"
     }
 }
   

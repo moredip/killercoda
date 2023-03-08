@@ -1,10 +1,11 @@
-Here's the service we'll be working on:js
+We're starting off with a "Hello, World" server, stored in `01_vanilla.js`. You can use the Editor tab to view that file, or just click on the command below
+to print the file out to the terminal:
 
 ```
 cat ~/app/01_vanilla.js
 ```{{exec}}
 
-Pretty much the most basic express server you can imagine - a single endpoint at `/`{{}} that returns a plaintext `"Hello, world!"`{{}} response.
+This is pretty much the most basic express server you can imagine - a single endpoint at `/`{{}} that returns a plaintext `"Hello, world!"`{{}} response.
 
 Start the server:
 ```
@@ -24,7 +25,7 @@ Let's imagine that we're adding a new, experimental feature to this hello world 
 
 However, we're not 100% sure that this cowsay formatting is going to work out, so for now we'll protect it behind a conditional:
 
-```
+``` javascript 02_basic_flags.js
 import 'cowsay'
 ...
 routes.get('/', async (req, res) => {

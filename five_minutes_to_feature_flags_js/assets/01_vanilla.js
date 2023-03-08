@@ -6,7 +6,7 @@ const routes = Router();
 app.use(routes);
 
 routes.get('/', async (req, res) => {
-  res.send("Hello, world!")
+  res.send("Hello, world!\n")
 })
 
 app.listen(3333)

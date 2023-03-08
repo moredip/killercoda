@@ -23,6 +23,8 @@
       },
       "assets": {
         "host01": [
+            {"file": "package.json", "target": "~/app" },
+            {"file": "package-lock.json", "target": "~/app" },
             {"file": "01_vanilla.js", "target": "~/app" },
             {"file": "02_basic_flags.js", "target": "~/app" },
             {"file": "03_openfeature.js", "target": "~/app" },

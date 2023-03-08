@@ -25,7 +25,7 @@ Let's imagine that we're adding a new, experimental feature to this hello world 
 
 However, we're not 100% sure that this cowsay formatting is going to work out, so for now we'll protect it behind a conditional:
 
-```javascript{4-11}
+```javascript
 import 'cowsay'
 ...
 routes.get('/', async (req, res) => {

@@ -26,6 +26,11 @@ routes.get('/', async (req, res) => {
   }
 })
 
-app.listen(3333)
+app.use(function (req, res, next) {
+  res.setHeader('content-type', 'text/plain')
+  next()
+});
 
-console.log("Server running on port 3333")
+app.listen(3333, () => {
+  console.log("Server running on port 3333")
+})

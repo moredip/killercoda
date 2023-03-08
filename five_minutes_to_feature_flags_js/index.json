@@ -7,16 +7,21 @@
         "text": "intro.md",
         "foreground": "assets/scripts/intro_foreground.sh"
       },
-      "steps": [{
+      "steps": [
+        {
             "title": "Hello, world",
-            "text": "step1.md"
+            "text": "vanilla.md"
+        }, {
+          "title": "Cows, please!",
+          "text": "cowsay.md"
         }, {
           "title": "Introducing OpenFeature",
           "text": "step2.md"
-      }, {
-        "title": "Moving to a Full Feature Flagging System",
-        "text": "step3.md"
-    }],
+        }, {
+          "title": "Moving to a Full Feature Flagging System",
+          "text": "step3.md"
+        }
+      ],
       "finish": {
         "title": "Next Steps",
         "text": "finish.md"
@@ -35,6 +40,9 @@
     },
     "backend": {
       "imageid": "ubuntu"
+    },
+    "interface": {
+      "layout": "ide"
     }
 }
   

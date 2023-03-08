@@ -2,6 +2,7 @@
   "name": "five-minutes-to-feature-flags-tutorial",
   "version": "1.0.0",
   "description": "A short tutorial demonstrating how to add OpenFeature to an express server",
+  "type": "module",
   "scripts": {},
   "author": "Pete Hodgson",
   "license": "MIT",

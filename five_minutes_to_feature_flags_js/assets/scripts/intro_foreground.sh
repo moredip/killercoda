@@ -28,7 +28,7 @@ apt install -y nodejs < /dev/null
 #  npm install
 # -----------------------------------
 cd app
-npm clean-install
+npm clean-install --force
 
 # ---------------------------------------------#
 #       🎉 Installation Complete 🎉           #

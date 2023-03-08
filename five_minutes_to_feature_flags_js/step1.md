@@ -40,28 +40,56 @@ routes.get('/', async (req, res) => {
 })
 ```{{}}
 
-See the entire code:
+You can view the full file (`02_basic_flags.js`) in the Editor tab, or just print it out by clicking below:
 
 ```
 cat ~/app/02_basic_flags.js
 ```{{exec interrupt}}
 
-Flick back to tab 1 and try out the new code:
+Let's run this new version of the server.  Flick back to tab 1 and try out the new code:
 
 ```
 node ~/app/02_basic_flags.js
 ```{{exec interrupt}}
 
-Back to tab 2 to re-curl the server:
+Back to tab 2 to re-curl the server (or [load it in the browser]({{TRAFFIC_HOST1_3333}})):
 
 ```
 curl http://localhost:3333
 ```{{exec}}
 
-No difference? Good. By default, our service continues to work exactly as it did before, but if we change `withCow`{{}} to `true`{{}} then our response comes in an exciting new format:
+No difference? Good. By default, our service continues to work exactly as it did before, because we have `withCow` hardcoded to `false`.
+
+Try updating it to `true` by editing `app/02_basic_flags.js` in the IDE:
+
+```javascript{4}
+routes.get('/', async (req, res) => {
+  // set this to true to test our new
+  // cow-based greeting system
+  const withCow = true
+  if(withCow){
+    res.send(cowsay.say({text:'Hello, world!'}))
+  }else{
+    res.send("Hello, world!")
+  }
+})
+```
+
+now if we restart the server:
+```
+node ~/app/02_basic_flags.js
+```{{exec interrupt}}
+
+
+Then [our server's response]({{TRAFFIC_HOST1_3333}})
 
 ```
 $> curl http://localhost:3333
+```{{exec}}
+
+should look a bit more exciting:
+
+```
  _______________
 < Hello, world! >
  ---------------
@@ -71,21 +99,6 @@ $> curl http://localhost:3333
                 ||----w |
                 ||     ||
 ```{{}}
-
-Open the editor and inside the `app`{{}} folder, open `02_basic_flags.js`{{}}.
-
-Change `false`{{}} on line `12`{{}} to `true`
-
-Flick over again to tab 1 and restart the server:
-
-```
-node ~/app/02_basic_flags.js
-```{{exec interrupt}}
-
-Flick back to tab 2 and curl the endpoint. You should see the new `cowsay`{{}} output:
-```
-curl http://localhost:3333
-```{{exec}}
 
 # The Crudest Flag
 That `withCow`{{}} boolean and its accompanying conditional check are a very basic feature flag - they let us hide an experimental or unfinished feature, but also easily switch the feature on while we're building and testing it.

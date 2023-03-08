@@ -23,6 +23,7 @@
       },
       "assets": {
         "host01": [
+            {"file": ".curlrc", "target": "~/" },
             {"file": "package.json", "target": "~/app" },
             {"file": "package-lock.json", "target": "~/app" },
             {"file": "01_vanilla.js", "target": "~/app" },

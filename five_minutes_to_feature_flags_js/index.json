@@ -18,8 +18,11 @@
           "title": "Introducing OpenFeature",
           "text": "03-intro-of.md"
         }, {
+          "title": "Starting with a simple flag provider",
+          "text": "04-minimal-provider.md"
+        }, {
           "title": "Moving to a Full Feature Flagging System",
-          "text": "04-more-providers.md"
+          "text": "05-more-providers.md"
         }
       ],
       "finish": {

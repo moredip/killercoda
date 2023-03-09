@@ -55,13 +55,13 @@ node ~/app/02_basic_flags.js
 ```{{exec interrupt}}
 
 
-Then [our server's response]({{TRAFFIC_HOST1_3333}})
+Now when we check [our server's response]({{TRAFFIC_HOST1_3333}})
 
 ```
 curl http://localhost:3333
 ```{{exec}}
 
-should look a bit more exciting:
+it should look a bit more exciting:
 
 ```
  _______________
@@ -74,5 +74,9 @@ should look a bit more exciting:
                 ||     ||
 ```{{}}
 
+Beautiful.
+
 # The Crudest Flag
-That `withCow`{{}} boolean and its accompanying conditional check are a very basic feature flag - they let us hide an experimental or unfinished feature, but also easily switch the feature on while we're building and testing it. 
+That `withCow`{{}} boolean and its accompanying conditional check is a very basic implementation of a *Feature Flag*. It lets us hide an experimental or unfinished feature, but also easily switch the feature on while we're building and testing it. 
+
+But managing these flags by changing hardcoded constants gets old pretty fast. Teams that uses feature flags in any significant way soon reaches for a feature flagging framework. We'll take a confident step in that direction next, by setting up the [OpenFeature](https://openfeature.dev) SDK:

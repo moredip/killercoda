@@ -58,7 +58,7 @@ node ~/app/02_basic_flags.js
 Then [our server's response]({{TRAFFIC_HOST1_3333}})
 
 ```
-$> curl http://localhost:3333
+curl http://localhost:3333
 ```{{exec}}
 
 should look a bit more exciting:

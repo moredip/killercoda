@@ -5,6 +5,8 @@ to print the file out to the terminal:
 cat ~/app/01_vanilla.js
 ```{{exec}}
 
+*(yes, you can literally click that command above to have it run live in the terminal on the right!)*
+
 This is pretty much the most basic express server you can imagine - a single endpoint at `/`{{}} that returns a plaintext `"Hello, world!"`{{}} response.
 
 Start the server by clicking the command below:

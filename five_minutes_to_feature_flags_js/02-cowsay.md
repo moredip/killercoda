@@ -79,4 +79,4 @@ Beautiful.
 # The Crudest Flag
 That `withCow`{{}} boolean and its accompanying conditional check is a very basic implementation of a *Feature Flag*. It lets us hide an experimental or unfinished feature, but also easily switch the feature on while we're building and testing it. 
 
-But managing these flags by changing hardcoded constants gets old pretty fast. Teams that uses feature flags in any significant way soon reaches for a feature flagging framework. We'll take a confident step in that direction next, by setting up the [OpenFeature](https://openfeature.dev) SDK:
+But managing these flags by changing hardcoded constants gets old pretty fast. Teams that uses feature flags in any significant way soon reach for a feature flagging framework. We'll take a confident step in that direction next, by setting up the [OpenFeature](https://openfeature.dev) SDK...

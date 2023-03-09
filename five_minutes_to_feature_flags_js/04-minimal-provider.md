@@ -15,7 +15,7 @@ const featureFlags = OpenFeature.getClient()
 
 This minimalist provider is exactly that - you give it a hard-coded set of feature flag values, and it provides those values via the OpenFeature SDK.
 
-In our `FLAG_CONFIGURATION`{{}} above we've hard-coded that `with-cows`{{}} feature flag to `true`{{}}, which means that conditional predicate in our express app will now evaluate to true, which means that our service should now start providing bovine output. Let's check!
+In our `FLAG_CONFIGURATION`{{}} above we've hard-coded that `with-cows`{{}} feature flag to `true`{{}}, causing that conditional predicate in our express app to now evaluate to true, which in turn means that our service should now start providing bovine output. Let's check!
 
 First, we'll start up this version of the server. Head back to Tab 1 and launch it:
 
@@ -42,11 +42,11 @@ The output should look like this:
                 ||     ||
 ```{{}}
 
-Our feature flagging system is working! Our server asks OpenFeature for the state of the `with-cows` flag, specifying a default of `false`. The OpenFeature SDK passes this request on to the configured provider, which returns a value of `true`, enabling the flag and thus the new and improved formatting.
+Our feature flagging system is working! Our server asks OpenFeature for the state of the `with-cows` flag. The OpenFeature SDK passes this request on to the configured provider which returns a value of `true`, enabling the flag in the server and producing the new and improved formatting.
 
 #### flipping a flag
 
-We can double-check that this is what's happening by updating the provider's flag configuration. Open up `04_openfeature_with_provider.js` in the Editor tab, and update the configuration to turn off the `with-cows` feature:
+We can double-check that our feature flag is having an effect by updating the provider's flag configuration. Open up `04_openfeature_with_provider.js` in the Editor tab, and update the configuration to turn off the `with-cows` feature:
 
 ```javascript{3}
 const featureFlags = OpenFeature.getClient()

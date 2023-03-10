@@ -34,7 +34,7 @@ curl http://localhost:3333
 Don't be surprised if the output looks the same as before - `withCow` is still set to `false` in that file, so it should be returning the same response as before.
 However, if we now update it to `true` then the format should change. 
 
-Give it a try! Edit the file (`app/02_basic_flags.js`) in the IDE, restart the server, and check the response. You'll want to edit the file to look like this:
+Give it a try! Open the server code (`app/02_basic_flags.js`) in the IDE (that `Editor` tab at the top left of the terminal to the right) and set `withCow` to true:
 
 ```javascript{4}
 routes.get('/', async (req, res) => {
@@ -49,13 +49,13 @@ routes.get('/', async (req, res) => {
 })
 ```
 
-now if we go back to flip back to `Tab 1` and restart the server:
+Now flip back to `Tab 1` and restart the server:
 ```
 node ~/app/02_basic_flags.js
 ```{{exec interrupt}}
 
 
-Now when we check [our server's response]({{TRAFFIC_HOST1_3333}})
+Finally, check [our server's response]({{TRAFFIC_HOST1_3333}})
 
 ```
 curl http://localhost:3333

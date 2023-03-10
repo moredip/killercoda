@@ -1,19 +1,20 @@
 A new version of our server, `04_openfeature_with_provider.js`, shows how to plug the OpenFeature SDK into a really simple flag provider.  Here's the relevant part of that file:
 
 ```
-import { MinimalistProvider } from '@moredip/openfeature-minimalist-provider'
+import { InMemoryProvider } from '@openfeature/in-memory-provider'
+
 
 const FLAG_CONFIGURATION = {
   'with-cows': true
 }
 
-const featureFlagProvider = new MinimalistProvider(FLAG_CONFIGURATION)
+const featureFlagProvider = new InMemoryProvider(FLAG_CONFIGURATION)
 
 OpenFeature.setProvider(featureFlagProvider)
 const featureFlags = OpenFeature.getClient()
 ```{{}}
 
-This minimalist provider is exactly that - you give it a hard-coded set of feature flag values, and it provides those values via the OpenFeature SDK.
+This [in-memory provider](https://www.npmjs.com/package/@openfeature/in-memory-provider) is the most basic feature flagging provider you could imagine. You configure it with hard-coded set of feature flag values, and it provides those values via the OpenFeature SDK.
 
 In our `FLAG_CONFIGURATION`{{}} above we've hard-coded that `with-cows`{{}} feature flag to `true`{{}}, causing that conditional predicate in our express app to now evaluate to true, which in turn means that our service should now start providing bovine output. Let's check!
 
@@ -54,7 +55,7 @@ const FLAG_CONFIGURATION = {
   'with-cows': false
 }
 
-const featureFlagProvider = new MinimalistProvider(FLAG_CONFIGURATION)
+const featureFlagProvider = new InMemoryProvider(FLAG_CONFIGURATION)
 ```
 
 Now hop over to tab 1 and re-start the server:

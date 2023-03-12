@@ -19,7 +19,7 @@ routes.get('/', async (req, res) => {
 
 We're importing the `@openfeature/js-sdk`{{}} npm module, and using it to create an OpenFeature client called `featureFlags`{{}}. We then call `getBooleanValue`{{}} to find out if the `with-cows` feature flag is `true` or `false`. Finally, we show either the new cow-based output or the traditional plaintext format depending on whether `withCows` is true or false, just as we did before.
 
-The big difference is that rather than using a hard-coded conditional we're not asking for the state of the flag dynamically, at runtime, using `getBooleanValue()`.
+The big difference is that rather than using a hard-coded conditional we're now asking for the state of the flag dynamically, at runtime, using `getBooleanValue()`.
 
 Let's try this new server out. Head back to Tab 1 and run it:
 

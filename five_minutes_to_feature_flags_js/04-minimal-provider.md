@@ -45,7 +45,7 @@ The output should look like this:
 
 Our feature flagging system is working! Our server asks OpenFeature for the state of the `with-cows` flag. The OpenFeature SDK passes this request on to the configured provider which returns a value of `true`, enabling the flag in the server and producing the new and improved formatting.
 
-#### flipping a flag
+# Flipping a Flag
 
 We can double-check that our feature flag is having an effect by updating the provider's flag configuration. Open up `04_openfeature_with_provider.js` in the Editor tab, and update the configuration to turn off the `with-cows` feature:
 
